@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">TITLE</th>
+    <th scope="col">PRICE</th>
+    <th scope="col">DESCRIPTION</th>
+    <th scope="col">ACTION</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td><a [routerLink]="['/products/detail',product.id]">{{product.title}}</a></td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>
+      <a routerLink="edit-product/{{product.id}}" class="btn btn-success">Edit</a>
+    </td>
+    <td>
+      <button (click)="delete(product.id)" class="btn btn-success">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+  <td><a routerLink="saveProduct" class="btn btn-success">Add New Product</a></td>
+</table>
+<router-outlet></router-outlet>
