@@ -12,7 +12,7 @@
   <tr *ngFor="let product of products; index as i">
     <td>{{i + 1}}</td>
     <td><a [routerLink]="['/products/detail',product.id]">{{product.title}}</a></td>
-    <td>{{product.price}}</td>
+    <td style="text-align: right">{{product.price}}</td>
     <td>{{product.description}}</td>
     <td>
       <a routerLink="edit-product/{{product.id}}" class="btn btn-success">Edit</a>
